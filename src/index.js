@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Star from './Star';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import './style.css';
+import Rating from './Rating';
+function App() {
+    return (
+        <div className="App">
+            <h2>Star Components:</h2>
+            <Star color="pink" isFilled/>
+            <Star color="magenta" />
+            <Star color="indigo" isFilled/>
+            <h2>Rating Component (uses Stars):</h2>
+            <Rating stars={4}/>
+        </div>
+    )
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<App/>, document.getElementById("root"));
+
